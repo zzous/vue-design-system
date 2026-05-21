@@ -73,9 +73,13 @@ pnpm dlx serve storybook-static -l 6006
 
 **최초 1회 설정:**
 
-1. [npmjs.com](https://www.npmjs.com/)에서 `@zzou` 스코프 권한 확인 (또는 패키지명 변경)
-2. [Access Token](https://www.npmjs.com/settings/~your-account~/tokens) 생성 (type: **Automation** 권장)
-3. GitHub 저장소 **Settings → Secrets and variables → Actions**에 `NPM_TOKEN` 추가
+1. [npmjs.com](https://www.npmjs.com/) 로그인 후 `@zzou` 조직(또는 본인 계정)에 패키지 publish 권한 확인
+2. [Access Tokens](https://www.npmjs.com/settings/~your-account~/tokens) → **Generate New Token** → type **Automation** (CI용)
+3. GitHub 저장소 **Settings → Secrets and variables → Actions → New repository secret**
+   - Name: `NPM_TOKEN` (이름 정확히 일치)
+   - Value: 방금 만든 npm 토큰 전체 문자열
+
+> `ENEEDAUTH` / `need auth` 오류는 거의 항상 **`NPM_TOKEN` Secret이 없거나 비어 있을 때** 발생합니다.
 
 **배포 절차:**
 
