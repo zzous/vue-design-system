@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "private": false,
   "type": "module",
+  "packageManager": "pnpm@10.8.1",
   "description": "Reusable Vue design system for zzou.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zzous/vue-design-system.git"
+  },
+  "homepage": "https://zzous.github.io/vue-design-system/",
+  "bugs": {
+    "url": "https://github.com/zzous/vue-design-system/issues"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -29,7 +38,8 @@
     "storybook": "storybook dev --port 6006",
     "typecheck": "vue-tsc --noEmit",
     "build": "vite build --config vite.lib.config.ts",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "pnpm run typecheck && pnpm run build"
   },
   "dependencies": {
     "@vuepic/vue-datepicker": "^11.0.2"
