@@ -1,0 +1,60 @@
+{
+  "name": "@zzou/vue-design-system",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Reusable Vue design system for zzou.",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/index.css": "./dist/index.css",
+    "./styles": "./src/tokens/index.css",
+    "./legacy-styles": "./src/styles/index.css"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/styles",
+    "src/tokens"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "storybook dev --port 6006",
+    "storybook": "storybook dev --port 6006",
+    "typecheck": "vue-tsc --noEmit",
+    "build": "vite build --config vite.lib.config.ts",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@vuepic/vue-datepicker": "^11.0.2"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.17",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/vue3": "^8.6.17",
+    "@storybook/vue3-vite": "^8.6.17",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "storybook": "^8.6.17",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "^4.5.4",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.8"
+  }
+}

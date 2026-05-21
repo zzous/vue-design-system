@@ -1,0 +1,79 @@
+/* ── Base ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-family-base, sans-serif);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 20px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ── Sizes ── */
+.small {
+  height: 16px;
+  line-height: 16px;
+  padding: 0 8px;
+  font-size: 10px;
+}
+.medium {
+  height: 20px;
+  line-height: 20px;
+  padding: 0 10px;
+  font-size: 11px;
+}
+.large {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+/* ── Variants ── */
+.primary {
+  background-color: #fed700;
+  color: #000;
+}
+
+.secondary {
+  border: 1px solid var(--ds-border-strong);
+  background-color: var(--ds-surface);
+  color: var(--ds-text);
+}
+
+.success {
+  background-color: var(--ds-badge-success-bg);
+  color: var(--ds-badge-success-text);
+}
+
+.warning {
+  background-color: var(--ds-badge-warning-bg);
+  color: var(--ds-badge-warning-text);
+}
+
+.error {
+  background-color: var(--ds-badge-error-bg);
+  color: var(--ds-badge-error-text);
+}
+
+.info {
+  background-color: var(--ds-badge-info-bg);
+  color: var(--ds-badge-info-text);
+}
+
+.neutral {
+  border: 1px solid var(--ds-border);
+  background-color: var(--ds-surface);
+  color: var(--ds-text-2);
+}
+
+/* ── Dot ── */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}

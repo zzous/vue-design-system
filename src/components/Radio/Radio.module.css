@@ -1,0 +1,105 @@
+/* ── RadioGroup ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ── Radio item ── */
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio.disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* hide native input */
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* custom circle */
+.circle {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--ds-border-strong);
+  background: var(--ds-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.radio:not(.disabled):hover .circle {
+  border-color: var(--ds-surface-primary);
+}
+
+.circle::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background var(--transition-fast);
+}
+
+/* checked state */
+.radio.checked .circle {
+  border-color: var(--ds-surface-primary);
+}
+
+.radio.checked .circle::after {
+  background: var(--ds-surface-primary);
+}
+
+/* disabled + checked */
+.radio.disabled.checked .circle {
+  border-color: var(--ds-border);
+  background: var(--ds-surface-disabled);
+}
+
+.radio.disabled.checked .circle::after {
+  background: var(--ds-text-disabled);
+}
+
+/* ── Sizes ── */
+.small .circle        { width: 14px; height: 14px; }
+.small .circle::after { width: 6px;  height: 6px; }
+.small .label         { font-size: var(--font-size-xs); }
+
+.medium .circle        { width: 18px; height: 18px; }
+.medium .circle::after { width: 8px;  height: 8px; }
+.medium .label         { font-size: var(--font-size-sm); }
+
+.large .circle        { width: 22px; height: 22px; }
+.large .circle::after { width: 10px; height: 10px; }
+.large .label         { font-size: var(--font-size-md); }
+
+/* label text */
+.label {
+  font-family: var(--font-family-base);
+  color: var(--ds-text-2);
+  line-height: 1;
+}
+
+.radio.disabled .label {
+  color: var(--ds-text-disabled);
+}

@@ -1,0 +1,128 @@
+/* ── Base ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background var(--transition-fast), border-color var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* ── Sizes ── */
+.small {
+  height: 24px;
+  padding: 0 8px;
+  font-size: var(--font-size-xs);
+  gap: 3px;
+}
+
+.medium {
+  height: 30px;
+  padding: 0 12px;
+  font-size: var(--font-size-sm);
+  gap: 4px;
+}
+
+.large {
+  height: 36px;
+  padding: 0 14px;
+  font-size: var(--font-size-md);
+  gap: 5px;
+}
+
+/* ── Clickable ── */
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.clickable:hover:not(.disabled) {
+  filter: brightness(0.94);
+}
+
+.clickable:active:not(.disabled) {
+  filter: brightness(0.88);
+}
+
+/* ── Disabled ── */
+.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Variants ── */
+.primary {
+  background: var(--color-primary-100);
+  border-color: var(--color-primary-300);
+  color: var(--color-primary-700);
+}
+
+.secondary {
+  background: var(--color-secondary-100);
+  border-color: var(--color-secondary-300);
+  color: var(--color-secondary-700);
+}
+
+.success {
+  background: var(--ds-badge-success-bg);
+  border-color: var(--color-success);
+  color: var(--ds-badge-success-text);
+}
+
+.warning {
+  background: var(--ds-badge-warning-bg);
+  border-color: var(--color-warning);
+  color: var(--ds-badge-warning-text);
+}
+
+.error {
+  background: var(--ds-badge-error-bg);
+  border-color: var(--color-error);
+  color: var(--ds-badge-error-text);
+}
+
+.info {
+  background: var(--ds-badge-info-bg);
+  border-color: var(--color-info);
+  color: var(--ds-badge-info-text);
+}
+
+.neutral {
+  background: var(--color-neutral-100);
+  border-color: var(--color-neutral-300);
+  color: var(--color-neutral-600);
+}
+
+/* ── Close button ── */
+.closeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  margin-left: 2px;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast);
+  line-height: 1;
+}
+
+.closeBtn:hover:not(:disabled) {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.closeBtn:disabled {
+  cursor: not-allowed;
+}
+
+.small  .closeBtn { width: 14px; height: 14px; }
+.medium .closeBtn { width: 16px; height: 16px; }
+.large  .closeBtn { width: 18px; height: 18px; }

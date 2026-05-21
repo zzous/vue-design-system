@@ -1,0 +1,126 @@
+/* ── CheckboxGroup ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ── Checkbox item ── */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox.disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* hide native input */
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* custom box */
+.box {
+  flex-shrink: 0;
+  border-radius: 3px;
+  border: 2px solid var(--ds-border-strong);
+  background: var(--ds-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.checkbox:not(.disabled):hover .box {
+  border-color: var(--ds-surface-primary);
+}
+
+/* checkmark (SVG via clip) */
+.box::after {
+  content: '';
+  display: block;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+/* checked */
+.checkbox.checked .box {
+  border-color: var(--ds-surface-primary);
+  background: var(--ds-surface-primary);
+}
+
+.checkbox.checked .box::after {
+  opacity: 1;
+  /* checkmark via border trick */
+  border: 2px solid var(--ds-text);
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+/* indeterminate */
+.checkbox.indeterminate .box {
+  border-color: var(--ds-surface-primary);
+  background: var(--ds-surface-primary);
+}
+
+.checkbox.indeterminate .box::after {
+  opacity: 1;
+  border: none;
+  border-top: 2px solid var(--ds-text);
+  transform: none;
+}
+
+/* disabled + checked / indeterminate */
+.checkbox.disabled.checked .box,
+.checkbox.disabled.indeterminate .box {
+  border-color: var(--ds-border);
+  background: var(--ds-surface-disabled);
+}
+
+.checkbox.disabled.checked .box::after,
+.checkbox.disabled.indeterminate .box::after {
+  border-color: var(--ds-text-disabled);
+}
+
+/* ── Sizes ── */
+.small .box          { width: 14px; height: 14px; }
+.small.checked .box::after       { width: 7px;  height: 4px; }
+.small.indeterminate .box::after { width: 7px; }
+.small .label        { font-size: var(--font-size-xs); }
+
+.medium .box          { width: 18px; height: 18px; }
+.medium.checked .box::after       { width: 9px;  height: 5px; }
+.medium.indeterminate .box::after { width: 9px; }
+.medium .label        { font-size: var(--font-size-sm); }
+
+.large .box          { width: 22px; height: 22px; }
+.large.checked .box::after       { width: 11px; height: 6px; }
+.large.indeterminate .box::after { width: 11px; }
+.large .label        { font-size: var(--font-size-md); }
+
+/* label text */
+.label {
+  font-family: var(--font-family-base);
+  color: var(--ds-text-2);
+  line-height: 1;
+}
+
+.checkbox.disabled .label {
+  color: var(--ds-text-disabled);
+}

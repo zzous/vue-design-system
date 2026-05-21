@@ -1,0 +1,93 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ── Label ── */
+.label {
+  font-family: var(--font-family-base, sans-serif);
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--ds-text-2);
+  line-height: 1.4;
+}
+
+.required {
+  color: var(--ds-text-error);
+  margin-left: 2px;
+}
+
+/* ── Wrapper ── */
+.textareaWrapper {
+  position: relative;
+  display: flex;
+}
+
+/* ── Textarea ── */
+.textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--ds-border);
+  border-radius: 3px;
+  font-family: var(--font-family-base, sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ds-text);
+  background-color: var(--ds-surface);
+  outline: none;
+  transition: border-color 150ms ease, background-color 150ms ease;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder {
+  color: var(--ds-text-placeholder);
+}
+
+.textarea:focus {
+  border-color: var(--ds-border-focus);
+}
+
+.textarea:disabled,
+.textarea[readonly] {
+  background-color: var(--ds-surface-disabled);
+  color: var(--ds-text-placeholder);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* ── Sizes ── */
+.small .textarea { font-size: 11px; padding: 6px 10px; }
+.medium .textarea { font-size: 12px; }
+.large .textarea  { font-size: 14px; padding: 10px 12px; }
+
+/* ── Error state ── */
+.error .textarea { border-color: var(--ds-border-error); }
+
+/* ── Footer (helper/error + count) ── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 16px;
+}
+
+.helperText {
+  font-size: 11px;
+  color: var(--ds-text-muted);
+  line-height: 1.4;
+}
+
+.errorText {
+  font-size: 11px;
+  color: var(--ds-text-error);
+  line-height: 1.4;
+}
+
+.count {
+  font-size: 11px;
+  color: var(--ds-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
