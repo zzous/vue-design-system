@@ -81,6 +81,17 @@ pnpm dlx serve storybook-static -l 6006
 
 > `ENEEDAUTH` / `need auth` 오류는 거의 항상 **`NPM_TOKEN` Secret이 없거나 비어 있을 때** 발생합니다.
 
+**`E403` + `Two-factor authentication ... bypass 2fa` 오류**
+
+npm 계정에 **2FA(이중 인증)** 가 켜져 있으면, 일반 Publish 토큰으로는 CI에서 배포할 수 없습니다. 아래 중 하나로 **새 토큰**을 만든 뒤 `NPM_TOKEN` Secret을 **교체**하세요.
+
+| 토큰 종류 | 설정 |
+|-----------|------|
+| **Classic → Automation** (권장) | [Access Tokens](https://www.npmjs.com/settings/~/tokens) → Generate New Token → **Automation** → `@zzou` 스코프 publish 권한 |
+| **Granular Access Token** | Permissions: Read and write packages → **Bypass 2FA for publish** 체크 |
+
+`Publish` 타입 Classic 토큰은 2FA가 켜진 계정에서 CI publish 시 위 `E403`이 납니다.
+
 **배포 절차:**
 
 ```bash

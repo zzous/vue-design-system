@@ -17,7 +17,7 @@ jobs:
         run: |
           if [ -z "$NPM_TOKEN" ]; then
             echo "::error::GitHub Secrets에 NPM_TOKEN이 없습니다."
-            echo "::error::npmjs.com → Access Tokens → Automation 토큰 생성 후"
+            echo "::error::npmjs.com → Access Tokens → Automation 토큰(2FA bypass) 생성 후"
             echo "::error::저장소 Settings → Secrets and variables → Actions → NPM_TOKEN 으로 등록하세요."
             exit 1
           fi
