@@ -1,25 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
-import { Button } from './components/Button';
-import { Badge } from './components/Badge';
-import { Chip } from './components/Chip';
-import { RadioGroup } from './components/Radio';
-import { CheckboxGroup } from './components/Checkbox';
-import { Input } from './components/Input';
-import { Select } from './components/Select';
-import { FileInput } from './components/FileInput';
-import { Modal } from './components/Modal';
-import { ToastProvider, useToast } from './components/Toast';
-import { Card } from './components/Card';
-import { Pagination } from './components/Pagination';
-import { Typography } from './components/Typography';
+import { SButton } from './components/Button';
+import { SBadge } from './components/Badge';
+import { SChip } from './components/Chip';
+import { SRadioGroup } from './components/Radio';
+import { SCheckboxGroup } from './components/Checkbox';
+import { SInput } from './components/Input';
+import { SSelect } from './components/Select';
+import { SFileInput } from './components/FileInput';
+import { SModal } from './components/Modal';
+import { SToastProvider, useToast } from './components/Toast';
+import { SCard } from './components/Card';
+import { SPagination } from './components/Pagination';
+import { STypography } from './components/Typography';
 
 const meta: Meta = {
   title: 'Showcase/All',
   decorators: [
     () => ({
-      components: { ToastProvider },
-      template: '<ToastProvider position="topRight"><story/></ToastProvider>',
+      components: { SToastProvider },
+      template: '<SToastProvider position="topRight"><story/></SToastProvider>',
     }),
   ],
 };
@@ -29,13 +29,13 @@ type Story = StoryObj;
 
 export const Buttons: Story = {
   render: () => ({
-    components: { Button },
+    components: { SButton },
     template: `
       <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <Button variant="primary">저장</Button>
-        <Button variant="secondary">취소</Button>
-        <Button variant="outline">더보기</Button>
-        <Button loading>처리 중</Button>
+        <SButton variant="primary">저장</SButton>
+        <SButton variant="secondary">취소</SButton>
+        <SButton variant="outline">더보기</SButton>
+        <SButton loading>처리 중</SButton>
       </div>
     `,
   }),
@@ -44,8 +44,8 @@ export const Buttons: Story = {
 export const InteractiveDemo: Story = {
   render: () => ({
     components: {
-      Button, Badge, Chip, RadioGroup, CheckboxGroup, Input, Select,
-      FileInput, Modal, Card, Pagination, Typography,
+      SButton, SBadge, SChip, SRadioGroup, SCheckboxGroup, SInput, SSelect,
+      SFileInput, SModal, SCard, SPagination, STypography,
     },
     setup() {
       const modalOpen = ref(false);
@@ -57,19 +57,19 @@ export const InteractiveDemo: Story = {
     },
     template: `
       <div style="display:flex;flex-direction:column;gap:24px;max-width:640px">
-        <Typography variant="h4">Vue Design System Showcase</Typography>
-        <div style="display:flex;gap:8px"><Badge variant="success">운영중</Badge><Chip>태그</Chip></div>
-        <RadioGroup name="demo" v-model="radio" :options="[{value:'a',label:'A'},{value:'b',label:'B'}]" />
-        <CheckboxGroup v-model="checks" :options="[{value:'x',label:'X'},{value:'y',label:'Y'}]" />
-        <Input label="이름" placeholder="입력" />
-        <Select label="역할" placeholder="선택" :options="[{value:'admin',label:'관리자'}]" />
-        <FileInput label="첨부" variant="inline" />
-        <Button @click="modalOpen = true">모달 열기</Button>
-        <Button @click="toast.success('완료', { message: '처리되었습니다.' })">토스트</Button>
-        <Pagination :item-count="100" :cnt-per-page="10" :current-page="page" @changed-page="(p) => page = p" />
-        <Modal :open="modalOpen" title="확인" @close="modalOpen = false">
+        <STypography variant="h4">Vue Design System Showcase</STypography>
+        <div style="display:flex;gap:8px"><SBadge variant="success">운영중</SBadge><SChip>태그</SChip></div>
+        <SRadioGroup name="demo" v-model="radio" :options="[{value:'a',label:'A'},{value:'b',label:'B'}]" />
+        <SCheckboxGroup v-model="checks" :options="[{value:'x',label:'X'},{value:'y',label:'Y'}]" />
+        <SInput label="이름" placeholder="입력" />
+        <SSelect label="역할" placeholder="선택" :options="[{value:'admin',label:'관리자'}]" />
+        <SFileInput label="첨부" variant="inline" />
+        <SButton @click="modalOpen = true">모달 열기</SButton>
+        <SButton @click="toast.success('완료', { message: '처리되었습니다.' })">토스트</SButton>
+        <SPagination :item-count="100" :cnt-per-page="10" :current-page="page" @changed-page="(p) => page = p" />
+        <SModal :open="modalOpen" title="확인" @close="modalOpen = false">
           <p>Vue로 변환된 디자인 시스템입니다.</p>
-        </Modal>
+        </SModal>
       </div>
     `,
   }),
