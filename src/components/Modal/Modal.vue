@@ -3,7 +3,7 @@ import { onUnmounted, ref, watch } from 'vue';
 import { Teleport } from 'vue';
 import styles from './Modal.module.css';
 
-export type ModalSize = 'small' | 'medium' | 'large' | 'xl' | 'full';
+export type ModalSize = 'small' | 'medium' | 'large' | 'full';
 export type ModalFooterAlign = 'left' | 'center' | 'right' | 'spaceBetween';
 
 export interface ModalProps {
@@ -86,9 +86,9 @@ const onBackdropClick = (e: MouseEvent) => {
   if (props.closeOnBackdrop && e.target === e.currentTarget) emit('close');
 };
 
-const panelClass = () => [styles.panel, styles[props.size]].join(' ');
+const panelClass = () => [styles.panel, styles[props.size ?? 'medium']].join(' ');
 const footerClass = () =>
-  [styles.footer, footerAlignClass[props.footerAlign]].filter(Boolean).join(' ');
+  [styles.footer, footerAlignClass[props.footerAlign ?? 'right']].filter(Boolean).join(' ');
 </script>
 
 <template>

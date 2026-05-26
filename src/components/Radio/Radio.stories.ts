@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
-import { RadioGroup } from './index';
+import { SRadioGroup } from './index';
 
 const options = [
   { value: 'a', label: '옵션 A' },
@@ -8,44 +8,52 @@ const options = [
   { value: 'c', label: '옵션 C (비활성)', disabled: true },
 ];
 
-const meta: Meta<typeof RadioGroup> = {
+const meta: Meta<typeof SRadioGroup> = {
   title: 'Components/Radio',
-  component: RadioGroup,
+  component: SRadioGroup,
   tags: ['autodocs'],
+  argTypes: {
+    direction: { control: 'inline-radio', options: ['horizontal', 'vertical'] },
+    disabled:  { control: 'boolean' },
+  },
+  args: {
+    direction: 'horizontal',
+    disabled: false,
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof RadioGroup>;
+type Story = StoryObj<typeof SRadioGroup>;
 
 export const Default: Story = {
-  render: () => ({
-    components: { RadioGroup },
+  render: (args) => ({
+    components: { SRadioGroup },
     setup() {
       const value = ref('a');
-      return { value, options };
+      return { args, value, options };
     },
-    template: '<RadioGroup name="demo" v-model="value" :options="options" />',
+    template: '<SRadioGroup name="demo" v-bind="args" v-model="value" :options="options" />',
   }),
 };
 
 export const Vertical: Story = {
   render: () => ({
-    components: { RadioGroup },
+    components: { SRadioGroup },
     setup() {
       const value = ref('a');
       return { value, options };
     },
-    template: '<RadioGroup name="vertical" v-model="value" :options="options" direction="vertical" />',
+    template: '<SRadioGroup name="vertical" v-model="value" :options="options" direction="vertical" />',
   }),
 };
 
 export const Disabled: Story = {
   render: () => ({
-    components: { RadioGroup },
+    components: { SRadioGroup },
     setup() {
       const value = ref('a');
       return { value, options };
     },
-    template: '<RadioGroup name="disabled" v-model="value" :options="options" disabled />',
+    template: '<SRadioGroup name="disabled" v-model="value" :options="options" disabled />',
   }),
 };

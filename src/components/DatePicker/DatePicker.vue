@@ -4,10 +4,13 @@ import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 import styles from './DatePicker.module.css';
 
+export type DatePickerSize = 'small' | 'medium' | 'large';
+
 export interface DatePickerProps {
   label?: string;
   placeholder?: string;
   disabled?: boolean;
+  size?: DatePickerSize;
   minDate?: Date;
   maxDate?: Date;
   excludeDates?: Date[];
@@ -17,6 +20,7 @@ export interface DatePickerProps {
 const props = withDefaults(defineProps<DatePickerProps>(), {
   placeholder: '날짜 선택',
   disabled: false,
+  size: 'medium',
 });
 
 const emit = defineEmits<{
@@ -39,8 +43,8 @@ const disabledDates = computed(() => {
 </script>
 
 <template>
-  <div :class="styles.datePicker">
-    <label v-if="label">{{ label }}</label>
+  <div :class="[styles.datePicker, styles[size ?? 'medium']]">
+    <label v-if="label" :class="styles.label">{{ label }}</label>
     <VueDatePicker
       v-model="selectedDate"
       :disabled="disabled"

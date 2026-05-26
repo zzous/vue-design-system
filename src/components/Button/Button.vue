@@ -29,8 +29,8 @@ const attrs = useAttrs();
 const classes = computed(() =>
   [
     styles.btn,
-    styles[props.variant],
-    styles[props.size],
+    styles[props.variant ?? 'primary'],
+    styles[props.size ?? 'medium'],
     props.fullWidth ? styles.fullWidth : '',
     props.iconOnly ? styles.iconOnly : '',
     attrs.class as string,

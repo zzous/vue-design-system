@@ -50,7 +50,7 @@ watch(
 const wrapperClasses = computed(() =>
   [
     styles.textareaWrapper,
-    styles[props.size],
+    styles[props.size ?? 'medium'],
     props.error ? styles.error : '',
     attrs.class as string,
   ]

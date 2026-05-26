@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<BadgeProps>(), {
 const attrs = useAttrs();
 
 const classes = computed(() =>
-  [styles.badge, styles[props.variant], styles[props.size], attrs.class as string]
+  [styles.badge, styles[props.variant ?? 'primary'], styles[props.size ?? 'medium'], attrs.class as string]
     .filter(Boolean)
     .join(' '),
 );

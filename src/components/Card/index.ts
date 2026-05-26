@@ -1,2 +1,2 @@
-export { default as Card } from './Card.vue';
+﻿export { default as SCard } from './Card.vue';
 export type { CardProps, CardVariant, CardSize } from './Card.vue';

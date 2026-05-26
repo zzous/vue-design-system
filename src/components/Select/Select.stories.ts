@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
-import { Select } from './index';
+import { SSelect } from './index';
 
 const options = [
   { value: 'admin', label: '관리자' },
@@ -8,26 +8,43 @@ const options = [
   { value: 'guest', label: '게스트', disabled: true },
 ];
 
-const meta: Meta<typeof Select> = {
+const meta: Meta<typeof SSelect> = {
   title: 'Components/Select',
-  component: Select,
+  component: SSelect,
   tags: ['autodocs'],
+  argTypes: {
+    label:       { control: 'text' },
+    size:        { control: 'select', options: ['small', 'medium', 'large'] },
+    error:       { control: 'boolean' },
+    helperText:  { control: 'text' },
+    errorText:   { control: 'text' },
+    placeholder: { control: 'text' },
+    required:    { control: 'boolean' },
+  },
+  args: {
+    label: '역할',
+    size: 'medium',
+    error: false,
+    helperText: '',
+    errorText: '',
+    placeholder: '선택하세요',
+    required: false,
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<typeof SSelect>;
 
 export const Default: Story = {
-  render: () => ({
-    components: { Select },
+  render: (args) => ({
+    components: { SSelect },
     setup() {
       const value = ref('');
-      return { value, options };
+      return { args, value, options };
     },
     template: `
-      <Select
-        label="역할"
-        placeholder="선택하세요"
+      <SSelect
+        v-bind="args"
         :options="options"
         v-model="value"
         style="max-width:320px"
@@ -38,12 +55,12 @@ export const Default: Story = {
 
 export const Error: Story = {
   render: () => ({
-    components: { Select },
+    components: { SSelect },
     setup() {
       return { options };
     },
     template: `
-      <Select
+      <SSelect
         label="역할"
         :options="options"
         error

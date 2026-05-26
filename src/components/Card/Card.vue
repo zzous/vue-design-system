@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<CardProps>(), {
 const attrs = useAttrs();
 
 const classes = computed(() =>
-  [styles.card, styles[props.variant], styles[props.size], attrs.class as string]
+  [styles.card, styles[props.variant ?? 'raised'], styles[props.size ?? 'medium'], attrs.class as string]
     .filter(Boolean)
     .join(' '),
 );

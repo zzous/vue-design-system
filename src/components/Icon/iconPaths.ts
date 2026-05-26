@@ -68,4 +68,67 @@ export const ICON_PATHS: Record<IconName, string> = {
   shield: `<path d="M8 2L3 4.5v4c0 3 2 4.5 5 5.5 3-1 5-2.5 5-5.5v-4L8 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />`,
   shieldCheck: `<path d="M8 2L3 4.5v4c0 3 2 4.5 5 5.5 3-1 5-2.5 5-5.5v-4L8 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />`,
   rocket: `<path d="M8 1.5c-3 2-4.5 5-4.5 7 0 1.5.5 2.5 4.5 4.5 4-2 4.5-3 4.5-4.5 0-2-1.5-5-4.5-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /><path d="M4.5 14l-2 1.5M11.5 14l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /><circle cx="8" cy="8" r="1.5" fill="currentColor" />`,
+
+  /* ── UI Controls ── */
+  moreHorizontal: `<circle cx="3" cy="8" r="1.2" fill="currentColor"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/><circle cx="13" cy="8" r="1.2" fill="currentColor"/>`,
+  moreVertical: `<circle cx="8" cy="3" r="1.2" fill="currentColor"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/><circle cx="8" cy="13" r="1.2" fill="currentColor"/>`,
+  grid: `<rect x="2" y="2" width="5" height="5" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="2" width="5" height="5" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="9" width="5" height="5" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="9" width="5" height="5" rx="0.5" stroke="currentColor" stroke-width="1.5"/>`,
+  list: `<path d="M6 4h8M6 8h8M6 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="3" cy="4" r="1" fill="currentColor"/><circle cx="3" cy="8" r="1" fill="currentColor"/><circle cx="3" cy="12" r="1" fill="currentColor"/>`,
+  zoomIn: `<circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L13 13M5 7h4M7 5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  zoomOut: `<circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L13 13M5 7h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  maximize: `<path d="M9 2h5v5M14 2l-5 5M7 14H2v-5M2 14l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  minimize: `<path d="M14 2l-5 5M9 2v4h4M2 14l5-5M7 14v-4H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  gripVertical: `<circle cx="5.5" cy="4" r="1" fill="currentColor"/><circle cx="5.5" cy="8" r="1" fill="currentColor"/><circle cx="5.5" cy="12" r="1" fill="currentColor"/><circle cx="10.5" cy="4" r="1" fill="currentColor"/><circle cx="10.5" cy="8" r="1" fill="currentColor"/><circle cx="10.5" cy="12" r="1" fill="currentColor"/>`,
+
+  /* ── Favorites / Social ── */
+  star: `<path d="M8 2l1.5 4.2H14l-3.5 2.5 1.3 4.3L8 10.6l-3.8 2.4 1.3-4.3L2 6.2h4.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  starFilled: `<path d="M8 2l1.5 4.2H14l-3.5 2.5 1.3 4.3L8 10.6l-3.8 2.4 1.3-4.3L2 6.2h4.5z" fill="currentColor"/>`,
+  heart: `<path d="M8 13C5 11 2 8.5 2 5.5A3.5 3.5 0 0 1 8.5 4.5 3.5 3.5 0 0 1 14 5.5C14 8.5 11 11 8 13z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  heartFilled: `<path d="M8 13C5 11 2 8.5 2 5.5A3.5 3.5 0 0 1 8.5 4.5 3.5 3.5 0 0 1 14 5.5C14 8.5 11 11 8 13z" fill="currentColor"/>`,
+  bookmark: `<path d="M4 2h8a1 1 0 0 1 1 1v11l-5-3-5 3V3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  bookmarkFilled: `<path d="M4 2h8a1 1 0 0 1 1 1v11l-5-3-5 3V3a1 1 0 0 1 1-1z" fill="currentColor"/>`,
+  thumbsUp: `<path d="M2 9.5h2V14H2V9.5zM4 9.5l2-7h.5A1.5 1.5 0 0 1 8 4V6.5h3.5A1.5 1.5 0 0 1 13 8l-.5 4A1.5 1.5 0 0 1 11 13.5H4V9.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  thumbsDown: `<path d="M14 6.5h-2V2h2V6.5zM12 6.5l-2 7h-.5A1.5 1.5 0 0 1 8 12V9.5H4.5A1.5 1.5 0 0 1 3 8l.5-4A1.5 1.5 0 0 1 5 2.5h7V6.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+
+  /* ── Communication ── */
+  mail: `<rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M2 5l6 5 6-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  phone: `<path d="M4 2h2l1.5 3.5-1.5 1.5c.8 1.5 2 2.7 3.5 3.5L11 9l3.5 1.5V13a1 1 0 0 1-1 1C5 14 2 5 2 4a1 1 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  message: `<path d="M2 3h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H6l-4 3V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  share: `<circle cx="13" cy="3" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="13" cy="13" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="3" cy="8" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4.4 7l7.2-3.5M4.4 9l7.2 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+
+  /* ── Location ── */
+  mapPin: `<path d="M8 2a4 4 0 0 1 4 4c0 3.5-4 8.5-4 8.5S4 9.5 4 6a4 4 0 0 1 4-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="8" cy="6" r="1.5" fill="currentColor"/>`,
+
+  /* ── Theme ── */
+  sun: `<circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.22 3.22l1.41 1.41M11.37 11.37l1.41 1.41M3.22 12.78l1.41-1.41M11.37 4.63l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  moon: `<path d="M12 10a5 5 0 0 1-5-5 5 5 0 0 1 .5-2A5.5 5.5 0 1 0 14 13.5a5 5 0 0 1-2 .5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+
+  /* ── Media ── */
+  play: `<path d="M5 3l8 5-8 5V3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  pause: `<rect x="3.5" y="3" width="3" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9.5" y="3" width="3" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/>`,
+  volumeUp: `<path d="M4 6H2v4h2l4 3V3L4 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M13.5 3.5a6 6 0 0 1 0 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  volumeMute: `<path d="M4 6H2v4h2l4 3V3L4 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 6l3 3m-3 0l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  mic: `<rect x="5.5" y="2" width="5" height="7" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 9a5 5 0 0 0 10 0M8 14v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  micOff: `<path d="M5.5 5.5V5A2.5 2.5 0 0 1 10.5 5v2M8.5 9.5A2.5 2.5 0 0 1 5.5 7M3 9a5 5 0 0 0 8.3 3.7M13 9a5 5 0 0 0-.4-2M8 14v-1M3 3l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  camera: `<path d="M2 6h1.5L5 4h6l1.5 2H14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="8" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>`,
+  video: `<rect x="1" y="4" width="9" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 7l5-2v6l-5-2V7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+
+  /* ── Files ── */
+  fileText: `<path d="M4 2h6l4 4v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 2v4h4M5 9h6M5 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  filePlus: `<path d="M4 2h6l4 4v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 2v4h4M6 10h4M8 8v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  folder: `<path d="M2 5a1 1 0 0 1 1-1h3.5L8 6h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  folderOpen: `<path d="M1 6a1 1 0 0 1 1-1h3L6.5 7H14a1 1 0 0 1 1 1l-1.5 5a1 1 0 0 1-1 .8H3a1 1 0 0 1-1-1V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+
+  /* ── Analytics ── */
+  barChart: `<path d="M2 14v-4h3v4H2zM6.5 14V8h3v6h-3zM11 14V5h3v9h-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>`,
+  lineChart: `<path d="M2 12l4-4 3 2 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  pieChart: `<circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V2M8 8l4.24 4.24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+
+  /* ── Misc ── */
+  tag: `<path d="M2 2h7l5 5.5-5 5.5H2V2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="5.5" cy="8" r="1" fill="currentColor"/>`,
+  flag: `<path d="M3 14V2M3 2h9l-2.5 4L12 10H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  help: `<circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M6 6.5a2 2 0 1 1 2 2V10M8 12v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  logout: `<path d="M6 3H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h3M11 11l3-3-3-3M14 8H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  hash: `<path d="M5 2l-2 12M13 2l-2 12M2 6h12M1 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  at: `<circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M11 8a5 5 0 1 0-1.5 3.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
 };

@@ -9,11 +9,11 @@ const props = withDefaults(defineProps<IconProps>(), {
 });
 
 const SIZE_MAP: Record<IconSize, number> = {
-  xs: 12,
+  xsmall: 12,
   small: 14,
   medium: 16,
   large: 20,
-  xl: 24,
+  xlarge: 24,
 };
 
 const px = computed(() =>
@@ -25,7 +25,6 @@ const svgStyle = computed(() => ({
   display: 'inline-block',
   flexShrink: 0,
   verticalAlign: 'middle',
-  ...props.style,
 }));
 </script>
 
@@ -38,8 +37,7 @@ const svgStyle = computed(() => ({
     xmlns="http://www.w3.org/2000/svg"
     :aria-label="ariaLabel"
     :aria-hidden="ariaHidden"
-    :class="props.class"
     :style="svgStyle"
     v-html="ICON_PATHS[name]"
-  />
+  ></svg>
 </template>

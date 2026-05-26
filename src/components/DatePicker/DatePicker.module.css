@@ -1,9 +1,19 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
 .datePicker {
   width: 100%;
 }
+
+.label {
+  display: block;
+  font-weight: 500;
+  color: var(--color-neutral-700);
+  margin-bottom: 6px;
+}
+
+.small .label { font-size: 11px; }
+.small :global(.dp__input) { height: 28px; font-size: 11px; }
+
+.medium .label { font-size: 12px; }
+.medium :global(.dp__input) { height: 32px; font-size: 12px; }
+
+.large .label { font-size: 14px; }
+.large :global(.dp__input) { height: 40px; font-size: 14px; }

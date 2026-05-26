@@ -1,37 +1,55 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
-import { Button } from '../Button';
-import { Modal } from './index';
+import { SButton } from '../Button';
+import { SModal } from './index';
 
-const meta: Meta<typeof Modal> = {
+const meta: Meta<typeof SModal> = {
   title: 'Components/Modal',
-  component: Modal,
+  component: SModal,
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
+  argTypes: {
+    title:           { control: 'text' },
+    description:     { control: 'text' },
+    size:            { control: 'select', options: ['small', 'medium', 'large', 'full'] },
+    footerAlign:     { control: 'select', options: ['left', 'center', 'right', 'spaceBetween'] },
+    closeOnBackdrop: { control: 'boolean' },
+    closeOnEsc:      { control: 'boolean' },
+    hideCloseButton: { control: 'boolean' },
+  },
+  args: {
+    title: '확인',
+    description: '이 작업을 진행하시겠습니까?',
+    size: 'medium',
+    footerAlign: 'right',
+    closeOnBackdrop: true,
+    closeOnEsc: true,
+    hideCloseButton: false,
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Modal>;
+type Story = StoryObj<typeof SModal>;
 
 export const Default: Story = {
-  render: () => ({
-    components: { Modal, Button },
+  render: (args) => ({
+    components: { SModal, SButton },
     setup() {
       const open = ref(false);
-      return { open };
+      return { args, open };
     },
     template: `
       <div>
-        <Button @click="open = true">모달 열기</Button>
-        <Modal :open="open" title="확인" description="이 작업을 진행하시겠습니까?" @close="open = false">
+        <SButton @click="open = true">모달 열기</SButton>
+        <SModal v-bind="args" :open="open" @close="open = false">
           <p style="margin:0">모달 본문 내용입니다.</p>
           <template #footer>
             <div style="display:flex;gap:8px;justify-content:flex-end">
-              <Button variant="ghost" @click="open = false">취소</Button>
-              <Button variant="primary" @click="open = false">확인</Button>
+              <SButton variant="ghost" @click="open = false">취소</SButton>
+              <SButton variant="primary" @click="open = false">확인</SButton>
             </div>
           </template>
-        </Modal>
+        </SModal>
       </div>
     `,
   }),
@@ -39,11 +57,11 @@ export const Default: Story = {
 
 export const Sizes: Story = {
   render: () => ({
-    components: { Modal, Button },
+    components: { SModal, SButton },
     setup() {
       const open = ref(false);
-      const size = ref<'small' | 'medium' | 'large'>('medium');
-      const openWith = (s: 'small' | 'medium' | 'large') => {
+      const size = ref<'small' | 'medium' | 'large' | 'full'>('medium');
+      const openWith = (s: 'small' | 'medium' | 'large' | 'full') => {
         size.value = s;
         open.value = true;
       };
@@ -51,12 +69,13 @@ export const Sizes: Story = {
     },
     template: `
       <div style="display:flex;gap:8px">
-        <Button variant="outline" @click="openWith('small')">Small</Button>
-        <Button variant="outline" @click="openWith('medium')">Medium</Button>
-        <Button variant="outline" @click="openWith('large')">Large</Button>
-        <Modal :open="open" :size="size" title="크기 미리보기" @close="open = false">
+        <SButton variant="outline" @click="openWith('small')">Small</SButton>
+        <SButton variant="outline" @click="openWith('medium')">Medium</SButton>
+        <SButton variant="outline" @click="openWith('large')">Large</SButton>
+        <SButton variant="outline" @click="openWith('full')">Full</SButton>
+        <SModal :open="open" :size="size" title="크기 미리보기" @close="open = false">
           <p style="margin:0">size: {{ size }}</p>
-        </Modal>
+        </SModal>
       </div>
     `,
   }),

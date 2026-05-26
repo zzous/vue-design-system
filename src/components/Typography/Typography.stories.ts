@@ -1,26 +1,42 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import { Typography } from './index';
+import { STypography } from './index';
 
-const meta: Meta<typeof Typography> = {
+const meta: Meta<typeof STypography> = {
   title: 'Components/Typography',
-  component: Typography,
+  component: STypography,
   tags: ['autodocs'],
+  argTypes: {
+    variant: { control: 'select', options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body1', 'body2', 'caption', 'overline', 'label'] },
+    color:   { control: 'select', options: ['default', 'primary', 'secondary', 'success', 'warning', 'error', 'muted'] },
+  },
+  args: {
+    variant: 'body1',
+    color: 'default',
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Typography>;
+type Story = StoryObj<typeof STypography>;
+
+export const Default: Story = {
+  render: (args) => ({
+    components: { STypography },
+    setup() { return { args }; },
+    template: '<STypography v-bind="args">StarBanking 디자인 시스템</STypography>',
+  }),
+};
 
 export const Headings: Story = {
   render: () => ({
-    components: { Typography },
+    components: { STypography },
     template: `
       <div style="display:flex;flex-direction:column;gap:8px">
-        <Typography variant="h1">Heading 1</Typography>
-        <Typography variant="h2">Heading 2</Typography>
-        <Typography variant="h3">Heading 3</Typography>
-        <Typography variant="h4">Heading 4</Typography>
-        <Typography variant="h5">Heading 5</Typography>
-        <Typography variant="h6">Heading 6</Typography>
+        <STypography variant="h1">Heading 1</STypography>
+        <STypography variant="h2">Heading 2</STypography>
+        <STypography variant="h3">Heading 3</STypography>
+        <STypography variant="h4">Heading 4</STypography>
+        <STypography variant="h5">Heading 5</STypography>
+        <STypography variant="h6">Heading 6</STypography>
       </div>
     `,
   }),
@@ -28,14 +44,14 @@ export const Headings: Story = {
 
 export const Body: Story = {
   render: () => ({
-    components: { Typography },
+    components: { STypography },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;max-width:480px">
-        <Typography variant="body1">본문 1 — StarBanking 디자인 시스템</Typography>
-        <Typography variant="body2">본문 2 — 보조 설명 텍스트입니다.</Typography>
-        <Typography variant="caption" color="muted">캡션 / 보조 정보</Typography>
-        <Typography variant="overline" color="primary">OVERLINE</Typography>
-        <Typography variant="label">라벨 텍스트</Typography>
+        <STypography variant="body1">본문 1 — StarBanking 디자인 시스템</STypography>
+        <STypography variant="body2">본문 2 — 보조 설명 텍스트입니다.</STypography>
+        <STypography variant="caption" color="muted">캡션 / 보조 정보</STypography>
+        <STypography variant="overline" color="primary">OVERLINE</STypography>
+        <STypography variant="label">라벨 텍스트</STypography>
       </div>
     `,
   }),
@@ -43,16 +59,16 @@ export const Body: Story = {
 
 export const Colors: Story = {
   render: () => ({
-    components: { Typography },
+    components: { STypography },
     template: `
       <div style="display:flex;flex-direction:column;gap:8px">
-        <Typography color="default">Default</Typography>
-        <Typography color="primary">Primary</Typography>
-        <Typography color="secondary">Secondary</Typography>
-        <Typography color="success">Success</Typography>
-        <Typography color="warning">Warning</Typography>
-        <Typography color="error">Error</Typography>
-        <Typography color="muted">Muted</Typography>
+        <STypography color="default">Default</STypography>
+        <STypography color="primary">Primary</STypography>
+        <STypography color="secondary">Secondary</STypography>
+        <STypography color="success">Success</STypography>
+        <STypography color="warning">Warning</STypography>
+        <STypography color="error">Error</STypography>
+        <STypography color="muted">Muted</STypography>
       </div>
     `,
   }),

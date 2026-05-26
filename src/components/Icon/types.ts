@@ -1,4 +1,4 @@
-export type IconSize = 'xs' | 'small' | 'medium' | 'large' | 'xl';
+export type IconSize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 export type IconName =
   | 'arrowUp' | 'arrowDown' | 'arrowLeft' | 'arrowRight'
   | 'chevronUp' | 'chevronDown' | 'chevronLeft' | 'chevronRight'
@@ -15,14 +15,33 @@ export type IconName =
   | 'cloud' | 'cloudUpload' | 'cloudDownload' | 'wifi' | 'globe'
   | 'terminal' | 'code' | 'gitBranch' | 'layers' | 'package' | 'bug' | 'activity'
   | 'shield' | 'shieldCheck'
-  | 'rocket';
+  | 'rocket'
+  // UI Controls
+  | 'moreHorizontal' | 'moreVertical' | 'grid' | 'list'
+  | 'zoomIn' | 'zoomOut' | 'maximize' | 'minimize' | 'gripVertical'
+  // Favorites / Social
+  | 'star' | 'starFilled' | 'heart' | 'heartFilled'
+  | 'bookmark' | 'bookmarkFilled' | 'thumbsUp' | 'thumbsDown'
+  // Communication
+  | 'mail' | 'phone' | 'message' | 'share'
+  // Location
+  | 'mapPin'
+  // Theme
+  | 'sun' | 'moon'
+  // Media
+  | 'play' | 'pause' | 'volumeUp' | 'volumeMute'
+  | 'mic' | 'micOff' | 'camera' | 'video'
+  // Files
+  | 'fileText' | 'filePlus' | 'folder' | 'folderOpen'
+  // Analytics
+  | 'barChart' | 'lineChart' | 'pieChart'
+  // Misc
+  | 'tag' | 'flag' | 'help' | 'logout' | 'hash' | 'at';
 
 export interface IconProps {
   name: IconName;
   size?: IconSize | number;
   color?: string;
-  class?: string;
-  style?: Record<string, string | number>;
   ariaLabel?: string;
   ariaHidden?: boolean;
 }

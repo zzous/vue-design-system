@@ -41,7 +41,7 @@ const selectId = computed(
 const wrapperClasses = computed(() =>
   [
     styles.selectWrapper,
-    styles[props.size],
+    styles[props.size ?? 'medium'],
     props.error ? styles.error : '',
     attrs.class as string,
   ]

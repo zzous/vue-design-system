@@ -30,8 +30,8 @@ const CLOSE_SIZES: Record<ChipSize, number> = {
 const classes = computed(() =>
   [
     styles.chip,
-    styles[props.variant],
-    styles[props.size],
+    styles[props.variant ?? 'neutral'],
+    styles[props.size ?? 'medium'],
     props.onClick ? styles.clickable : '',
     props.disabled ? styles.disabled : '',
     attrs.class as string,

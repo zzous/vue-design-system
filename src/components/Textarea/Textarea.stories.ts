@@ -1,36 +1,59 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
-import { Textarea } from './index';
+import { STextarea } from './index';
 
-const meta: Meta<typeof Textarea> = {
+const meta: Meta<typeof STextarea> = {
   title: 'Components/Textarea',
-  component: Textarea,
+  component: STextarea,
   tags: ['autodocs'],
+  argTypes: {
+    label:      { control: 'text' },
+    size:       { control: 'select', options: ['small', 'medium', 'large'] },
+    error:      { control: 'boolean' },
+    helperText: { control: 'text' },
+    errorText:  { control: 'text' },
+    required:   { control: 'boolean' },
+    resize:     { control: 'select', options: ['none', 'vertical', 'both'] },
+    showCount:  { control: 'boolean' },
+    rows:       { control: 'number' },
+    maxLength:  { control: 'number' },
+  },
+  args: {
+    label: '메모',
+    size: 'medium',
+    error: false,
+    helperText: '',
+    errorText: '',
+    required: false,
+    resize: 'vertical',
+    showCount: false,
+    rows: 3,
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Textarea>;
+type Story = StoryObj<typeof STextarea>;
 
 export const Default: Story = {
-  render: () => ({
-    components: { Textarea },
+  render: (args) => ({
+    components: { STextarea },
     setup() {
       const value = ref('');
-      return { value };
+      return { args, value };
     },
-    template: '<Textarea label="메모" placeholder="내용을 입력하세요" v-model="value" />',
+    template: '<STextarea v-bind="args" placeholder="내용을 입력하세요" v-model="value" />',
   }),
 };
 
 export const WithCount: Story = {
   render: () => ({
-    components: { Textarea },
+    components: { STextarea },
     setup() {
       const value = ref('StarBanking');
       return { value };
     },
     template: `
-      <Textarea
+      <STextarea
         label="설명"
         show-count
         :max-length="100"
@@ -43,7 +66,7 @@ export const WithCount: Story = {
 
 export const Error: Story = {
   render: () => ({
-    components: { Textarea },
-    template: '<Textarea label="사유" error error-text="필수 입력입니다" />',
+    components: { STextarea },
+    template: '<STextarea label="사유" error error-text="필수 입력입니다" />',
   }),
 };

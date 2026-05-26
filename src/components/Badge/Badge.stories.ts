@@ -1,34 +1,45 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import { Badge } from './index';
+import { SBadge } from './index';
 
-const meta: Meta<typeof Badge> = {
+const meta: Meta<typeof SBadge> = {
   title: 'Components/Badge',
-  component: Badge,
+  component: SBadge,
   tags: ['autodocs'],
+  argTypes: {
+    variant: { control: 'select', options: ['primary', 'secondary', 'success', 'warning', 'error', 'info', 'neutral'] },
+    size:    { control: 'select', options: ['small', 'medium', 'large'] },
+    dot:     { control: 'boolean' },
+  },
+  args: {
+    variant: 'primary',
+    size: 'medium',
+    dot: false,
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Badge>;
+type Story = StoryObj<typeof SBadge>;
 
 export const Default: Story = {
-  render: () => ({
-    components: { Badge },
-    template: '<Badge>기본</Badge>',
+  render: (args) => ({
+    components: { SBadge },
+    setup() { return { args }; },
+    template: '<SBadge v-bind="args">기본</SBadge>',
   }),
 };
 
 export const AllVariants: Story = {
   render: () => ({
-    components: { Badge },
+    components: { SBadge },
     template: `
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-        <Badge variant="primary">Primary</Badge>
-        <Badge variant="secondary">Secondary</Badge>
-        <Badge variant="success">Success</Badge>
-        <Badge variant="warning">Warning</Badge>
-        <Badge variant="error">Error</Badge>
-        <Badge variant="info">Info</Badge>
-        <Badge variant="neutral">Neutral</Badge>
+        <SBadge variant="primary">Primary</SBadge>
+        <SBadge variant="secondary">Secondary</SBadge>
+        <SBadge variant="success">Success</SBadge>
+        <SBadge variant="warning">Warning</SBadge>
+        <SBadge variant="error">Error</SBadge>
+        <SBadge variant="info">Info</SBadge>
+        <SBadge variant="neutral">Neutral</SBadge>
       </div>
     `,
   }),
@@ -36,12 +47,12 @@ export const AllVariants: Story = {
 
 export const Sizes: Story = {
   render: () => ({
-    components: { Badge },
+    components: { SBadge },
     template: `
       <div style="display:flex;gap:8px;align-items:center">
-        <Badge size="small">Small</Badge>
-        <Badge size="medium">Medium</Badge>
-        <Badge size="large">Large</Badge>
+        <SBadge size="small">Small</SBadge>
+        <SBadge size="medium">Medium</SBadge>
+        <SBadge size="large">Large</SBadge>
       </div>
     `,
   }),
@@ -49,7 +60,7 @@ export const Sizes: Story = {
 
 export const WithDot: Story = {
   render: () => ({
-    components: { Badge },
-    template: '<Badge variant="success" dot>운영중</Badge>',
+    components: { SBadge },
+    template: '<SBadge variant="success" dot>운영중</SBadge>',
   }),
 };

@@ -39,10 +39,10 @@ const colorClassMap: Record<TypographyColor, string> = {
   muted: styles.colorMuted,
 };
 
-const tag = computed(() => props.as ?? variantTagMap[props.variant]);
+const tag = computed(() => props.as ?? variantTagMap[props.variant ?? 'body1']);
 
 const classes = computed(() =>
-  [styles.base, styles[props.variant], colorClassMap[props.color], attrs.class as string]
+  [styles.base, styles[props.variant ?? 'body1'], colorClassMap[props.color ?? 'default'], attrs.class as string]
     .filter(Boolean)
     .join(' '),
 );

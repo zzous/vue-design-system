@@ -33,7 +33,7 @@ const inputId = computed(
 const wrapperClasses = computed(() =>
   [
     styles.inputWrapper,
-    styles[props.size],
+    styles[props.size ?? 'medium'],
     props.error ? styles.error : '',
     attrs.class as string,
   ]
