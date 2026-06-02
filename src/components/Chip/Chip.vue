@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SChip' });
 import { computed, useAttrs } from 'vue';
 import styles from './Chip.module.css';
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SFileInput' });
 import { computed, ref } from 'vue';
 import styles from './FileInput.module.css';
 

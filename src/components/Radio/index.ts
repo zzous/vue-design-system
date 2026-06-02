@@ -1,4 +1,10 @@
-﻿export { default as SRadio } from './Radio.vue';
-export { default as SRadioGroup } from './RadioGroup.vue';
+import _SRadio from './Radio.vue';
+(_SRadio as any).__name = 'SRadio';
+(_SRadio as any).__docgenInfo = { ...(_SRadio as any).__docgenInfo, displayName: 'SRadio' };
+export { _SRadio as SRadio };
+import _SRadioGroup from './RadioGroup.vue';
+(_SRadioGroup as any).__name = 'SRadioGroup';
+(_SRadioGroup as any).__docgenInfo = { ...(_SRadioGroup as any).__docgenInfo, displayName: 'SRadioGroup' };
+export { _SRadioGroup as SRadioGroup };
 export type { RadioProps, RadioSize } from './Radio.vue';
 export type { RadioGroupProps, RadioOption } from './RadioGroup.vue';

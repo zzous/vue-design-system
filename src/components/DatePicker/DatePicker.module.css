@@ -17,3 +17,23 @@
 
 .large .label { font-size: 14px; }
 .large :global(.dp__input) { height: 40px; font-size: 14px; }
+
+/* 입력 필드 (인풋은 컴포넌트 루트 안에 있음) */
+.datePicker :global(.dp__input) {
+  font-family: var(--font-family-base);
+  color: var(--ds-text);
+  border-color: var(--ds-border);
+  border-radius: var(--radius-md);
+}
+
+.datePicker :global(.dp__input:hover) {
+  border-color: var(--ds-border-focus);
+}
+
+.datePicker :global(.dp__input:focus) {
+  border-color: var(--ds-surface-primary);
+}
+
+.datePicker :global(.dp__input_icon) {
+  color: var(--ds-text-muted);
+}

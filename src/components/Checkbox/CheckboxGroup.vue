@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SCheckboxGroup' });
 import { computed } from 'vue';
 import Checkbox from './Checkbox.vue';
 import styles from './Checkbox.module.css';

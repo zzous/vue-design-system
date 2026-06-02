@@ -15,7 +15,7 @@
 .radio {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   user-select: none;
 }
@@ -37,8 +37,8 @@
 /* custom circle */
 .circle {
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 2px solid var(--ds-border-strong);
   background: var(--ds-surface);
@@ -54,8 +54,8 @@
 
 .circle::after {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: transparent;
   transition: background var(--transition-fast);
@@ -81,16 +81,16 @@
 }
 
 /* ── Sizes ── */
-.small .circle        { width: 14px; height: 14px; }
-.small .circle::after { width: 6px;  height: 6px; }
+.small .circle        { width: 12px; height: 12px; border-width: 1.5px; }
+.small .circle::after { width: 5px;  height: 5px; }
 .small .label         { font-size: var(--font-size-xs); }
 
-.medium .circle        { width: 18px; height: 18px; }
-.medium .circle::after { width: 8px;  height: 8px; }
+.medium .circle        { width: 16px; height: 16px; }
+.medium .circle::after { width: 7px;  height: 7px; }
 .medium .label         { font-size: var(--font-size-sm); }
 
-.large .circle        { width: 22px; height: 22px; }
-.large .circle::after { width: 10px; height: 10px; }
+.large .circle        { width: 20px; height: 20px; }
+.large .circle::after { width: 9px; height: 9px; }
 .large .label         { font-size: var(--font-size-md); }
 
 /* label text */

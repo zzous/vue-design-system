@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SBadge' });
 import { computed, useAttrs } from 'vue';
 import styles from './Badge.module.css';
 

@@ -72,6 +72,9 @@ export type {
 export { SChip } from './components/Chip';
 export type { ChipProps as SChipProps, ChipVariant as SChipVariant, ChipSize as SChipSize } from './components/Chip';
 
+export { SLink } from './components/Link';
+export type { LinkProps as SLinkProps, LinkVariant as SLinkVariant, LinkSize as SLinkSize, LinkTarget as SLinkTarget } from './components/Link';
+
 export { STextarea } from './components/Textarea';
 export type {
   TextareaProps as STextareaProps,

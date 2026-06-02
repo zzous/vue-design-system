@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SModal' });
 import { onUnmounted, ref, watch } from 'vue';
 import { Teleport } from 'vue';
 import styles from './Modal.module.css';

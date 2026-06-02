@@ -1,7 +1,9 @@
 <script setup lang="ts">
+defineOptions({ name: 'SDatePicker' });
 import { computed, ref } from 'vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
+import '../../styles/datepicker-theme.css';
 import styles from './DatePicker.module.css';
 
 export type DatePickerSize = 'small' | 'medium' | 'large';
@@ -11,6 +13,8 @@ export interface DatePickerProps {
   placeholder?: string;
   disabled?: boolean;
   size?: DatePickerSize;
+  /** 달력 다크 테마 (dp__theme_dark CSS 변수 적용) */
+  dark?: boolean;
   minDate?: Date;
   maxDate?: Date;
   excludeDates?: Date[];
@@ -21,6 +25,7 @@ const props = withDefaults(defineProps<DatePickerProps>(), {
   placeholder: '날짜 선택',
   disabled: false,
   size: 'medium',
+  dark: false,
 });
 
 const emit = defineEmits<{
@@ -48,9 +53,11 @@ const disabledDates = computed(() => {
     <VueDatePicker
       v-model="selectedDate"
       :disabled="disabled"
+      :dark="dark"
       :min-date="minDate"
       :max-date="maxDate"
       :disabled-dates="disabledDates"
+      menu-class-name="s-dp-menu"
       format="yyyy.MM.dd"
       :enable-time-picker="false"
       :placeholder="placeholder"

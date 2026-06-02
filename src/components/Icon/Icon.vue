@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SIcon' });
 import { computed } from 'vue';
 import { ICON_PATHS } from './iconPaths';
 import type { IconProps, IconSize } from './types';

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SButton' });
 import { computed, useAttrs } from 'vue';
 import styles from './Button.module.css';
 

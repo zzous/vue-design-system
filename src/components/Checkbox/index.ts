@@ -1,4 +1,10 @@
-﻿export { default as SCheckbox } from './Checkbox.vue';
-export { default as SCheckboxGroup } from './CheckboxGroup.vue';
+import _SCheckbox from './Checkbox.vue';
+(_SCheckbox as any).__name = 'SCheckbox';
+(_SCheckbox as any).__docgenInfo = { ...(_SCheckbox as any).__docgenInfo, displayName: 'SCheckbox' };
+export { _SCheckbox as SCheckbox };
+import _SCheckboxGroup from './CheckboxGroup.vue';
+(_SCheckboxGroup as any).__name = 'SCheckboxGroup';
+(_SCheckboxGroup as any).__docgenInfo = { ...(_SCheckboxGroup as any).__docgenInfo, displayName: 'SCheckboxGroup' };
+export { _SCheckboxGroup as SCheckboxGroup };
 export type { CheckboxProps, CheckboxSize } from './Checkbox.vue';
 export type { CheckboxGroupProps, CheckboxOption } from './CheckboxGroup.vue';

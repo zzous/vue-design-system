@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SSelect' });
 import { computed, useAttrs } from 'vue';
 import styles from './Select.module.css';
 

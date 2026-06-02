@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SCard' });
 import { computed, useAttrs } from 'vue';
 import styles from './Card.module.css';
 

@@ -1,0 +1,74 @@
+/**
+ * @vuepic/vue-datepicker 달력 테마
+ * https://vue3datepicker.com/customization/theming/
+ *
+ * 팝업은 body로 teleport 되므로 전역 클래스(.dp__theme_*)로 오버라이드합니다.
+ */
+.dp__theme_light {
+  --dp-font-family: var(--font-family-base);
+  --dp-border-radius: var(--radius-md);
+  --dp-cell-border-radius: var(--radius-sm);
+  --dp-font-size: var(--font-size-sm);
+  --dp-preview-font-size: var(--font-size-sm);
+  --dp-cell-size: 36px;
+  --dp-cell-padding: 4px;
+  --dp-menu-padding: 8px 12px 12px;
+  --dp-menu-min-width: 280px;
+
+  --dp-background-color: var(--ds-surface);
+  --dp-text-color: var(--ds-text);
+  --dp-primary-color: var(--ds-surface-primary);
+  --dp-primary-text-color: var(--ds-text);
+  --dp-primary-disabled-color: var(--color-primary-200);
+  --dp-secondary-color: var(--ds-text-muted);
+  --dp-hover-color: var(--color-primary-50);
+  --dp-hover-text-color: var(--ds-text);
+  --dp-hover-icon-color: var(--ds-text-2);
+  --dp-icon-color: var(--ds-text-muted);
+  --dp-border-color: var(--ds-border);
+  --dp-menu-border-color: var(--ds-border-light);
+  --dp-border-color-hover: var(--ds-border-focus);
+  --dp-disabled-color: var(--ds-surface-disabled);
+  --dp-disabled-color-text: var(--ds-text-disabled);
+  --dp-scroll-bar-background: var(--color-neutral-100);
+  --dp-scroll-bar-color: var(--color-neutral-400);
+  --dp-highlight-color: var(--color-primary-100);
+  --dp-range-between-dates-background-color: var(--color-primary-50);
+  --dp-range-between-dates-text-color: var(--ds-text);
+}
+
+.dp__theme_dark {
+  --dp-font-family: var(--font-family-base);
+  --dp-border-radius: var(--radius-md);
+  --dp-cell-border-radius: var(--radius-sm);
+  --dp-font-size: var(--font-size-sm);
+  --dp-cell-size: 36px;
+
+  --dp-background-color: var(--ds-surface);
+  --dp-text-color: var(--ds-text);
+  --dp-primary-color: var(--ds-surface-primary);
+  --dp-primary-text-color: var(--ds-text);
+  --dp-secondary-color: var(--ds-text-muted);
+  --dp-hover-color: var(--ds-surface-hover);
+  --dp-hover-text-color: var(--ds-text);
+  --dp-border-color: var(--ds-border);
+  --dp-menu-border-color: var(--ds-border);
+  --dp-icon-color: var(--ds-text-muted);
+  --dp-disabled-color: var(--ds-surface-disabled);
+  --dp-disabled-color-text: var(--ds-text-disabled);
+}
+
+/* 선택일·오늘 등 세부 톤 */
+.dp__theme_light .dp__active_date,
+.dp__theme_dark .dp__active_date {
+  font-weight: var(--font-weight-semibold);
+}
+
+.dp__theme_light .dp__today {
+  border-color: var(--ds-surface-primary);
+}
+
+.s-dp-menu {
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+}

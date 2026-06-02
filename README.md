@@ -42,7 +42,7 @@ pnpm typecheck
 
 ## 컴포넌트
 
-Badge, BaseButton, Button, Card, Checkbox, Chip, DatePicker, DateRangePicker, FileInput, Icon, Input, Modal, Pagination, Radio, Select, Textarea, Toast, Typography
+Badge, BaseButton, Button, Card, Checkbox, Chip, DatePicker, FileInput, Icon, Input, Link, Modal, Pagination, Radio, Select, Textarea, Toast, Typography
 
 React 버전과 동일한 `S` 접두사 export API를 유지합니다.
 

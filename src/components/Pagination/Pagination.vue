@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SPagination' });
 import { computed } from 'vue';
 import { SButton as Button } from '../Button';
 import { SIcon as Icon } from '../Icon';

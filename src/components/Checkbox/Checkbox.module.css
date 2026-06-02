@@ -15,7 +15,7 @@
 .checkbox {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   user-select: none;
 }
@@ -99,19 +99,19 @@
 }
 
 /* ── Sizes ── */
-.small .box          { width: 14px; height: 14px; }
-.small.checked .box::after       { width: 7px;  height: 4px; }
-.small.indeterminate .box::after { width: 7px; }
+.small .box          { width: 12px; height: 12px; border-width: 1.5px; }
+.small.checked .box::after       { width: 6px;  height: 3.5px; border-width: 1.5px; }
+.small.indeterminate .box::after { width: 6px; border-top-width: 1.5px; }
 .small .label        { font-size: var(--font-size-xs); }
 
-.medium .box          { width: 18px; height: 18px; }
-.medium.checked .box::after       { width: 9px;  height: 5px; }
-.medium.indeterminate .box::after { width: 9px; }
+.medium .box          { width: 16px; height: 16px; }
+.medium.checked .box::after       { width: 8px;  height: 4.5px; }
+.medium.indeterminate .box::after { width: 8px; }
 .medium .label        { font-size: var(--font-size-sm); }
 
-.large .box          { width: 22px; height: 22px; }
-.large.checked .box::after       { width: 11px; height: 6px; }
-.large.indeterminate .box::after { width: 11px; }
+.large .box          { width: 20px; height: 20px; }
+.large.checked .box::after       { width: 10px; height: 5.5px; }
+.large.indeterminate .box::after { width: 10px; }
 .large .label        { font-size: var(--font-size-md); }
 
 /* label text */

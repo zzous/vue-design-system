@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
+import { SIcon } from '../Icon';
 import { SButton } from './index';
 
 const meta: Meta<typeof SButton> = {
@@ -70,6 +71,27 @@ export const States: Story = {
         <SButton loading>처리 중</SButton>
         <SButton disabled>비활성</SButton>
         <SButton full-width style="max-width:240px">Full Width</SButton>
+      </div>
+    `,
+  }),
+};
+
+export const WithIcon: Story = {
+  render: () => ({
+    components: { SButton, SIcon },
+    template: `
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <SButton variant="primary">
+          <template #leftIcon><SIcon name="plus" /></template>
+          추가
+        </SButton>
+        <SButton variant="outline">
+          다음
+          <template #rightIcon><SIcon name="chevronRight" /></template>
+        </SButton>
+        <SButton variant="secondary" icon-only aria-label="검색">
+          <template #leftIcon><SIcon name="search" /></template>
+        </SButton>
       </div>
     `,
   }),

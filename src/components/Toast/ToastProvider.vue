@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SToastProvider' });
 import { provide, ref } from 'vue';
 import { Teleport } from 'vue';
 import ToastCard from './ToastCard.vue';

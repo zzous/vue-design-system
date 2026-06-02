@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'STextarea' });
 import { computed, ref, useAttrs, watch } from 'vue';
 import styles from './Textarea.module.css';
 

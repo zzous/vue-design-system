@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SRadioGroup' });
 import { computed, provide, toRef } from 'vue';
 import Radio from './Radio.vue';
 import { radioGroupKey } from './radioContext';

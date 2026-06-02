@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ name: 'SCheckbox' });
 import { computed, ref, watch } from 'vue';
 import styles from './Checkbox.module.css';
 

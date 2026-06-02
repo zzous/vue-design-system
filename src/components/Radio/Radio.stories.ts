@@ -13,10 +13,12 @@ const meta: Meta<typeof SRadioGroup> = {
   component: SRadioGroup,
   tags: ['autodocs'],
   argTypes: {
+    size:      { control: 'select', options: ['small', 'medium', 'large'] },
     direction: { control: 'inline-radio', options: ['horizontal', 'vertical'] },
     disabled:  { control: 'boolean' },
   },
   args: {
+    size: 'medium',
     direction: 'horizontal',
     disabled: false,
   },
