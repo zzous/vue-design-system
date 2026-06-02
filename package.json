@@ -1,7 +1,7 @@
 {
   "name": "@zzou/vue-design-system",
-  "version": "1.0.6",
-  "private": true,
+  "version": "1.0.7",
+  "private": false,
   "type": "module",
   "packageManager": "pnpm@10.8.1",
   "description": "Reusable Vue design system for zzou.",
