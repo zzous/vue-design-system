@@ -1,7 +1,5 @@
 # @zzou/vue-design-system
 
-React 기반 `@zzou/design-system`을 Vue 3로 포팅한 컴포넌트 라이브러리입니다.
-
 - **Storybook (GitHub Pages):** https://zzous.github.io/vue-design-system/
 - **npm:** https://www.npmjs.com/package/@zzou/vue-design-system
 
